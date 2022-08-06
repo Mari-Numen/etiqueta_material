@@ -1,0 +1,136 @@
+{
+    "_version": "1.32.0",
+    "sap.app": {
+        "id": "br.com.dohler.zui5etqmaterial.zui5mmetqmaterial",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "ach": "ach",
+        "dataSources": {
+            "ZGW_MM_ETQ_MATERIAL_SRV_Annotation": {
+                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZGW_MM_ETQ_MATERIAL_ANNO_MDL',Version='0001')/$value/",
+                "type": "ODataAnnotation",
+                "settings": {
+                    "localUri": "localService/ZGW_MM_ETQ_MATERIAL_SRV_Annotation.xml"
+                }
+            },
+            "ZGW_MM_ETQ_MATERIAL_SRV": {
+                "uri": "/sap/opu/odata/sap/ZGW_MM_ETQ_MATERIAL_SRV",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "annotations": [
+                        "ZGW_MM_ETQ_MATERIAL_SRV_Annotation"
+                    ],
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "br-com-dohler-zui5etqmaterial-zui5mmetqmaterial-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "zui5_etq_material",
+                    "action": "display",
+                    "title": "{{flpTitle}}",
+                    "subTitle": "{{flpSubtitle}}",
+                    "icon": ""
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://task",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "br.com.dohler.zui5etqmaterial.zui5mmetqmaterial.view.main",
+            "type": "XML",
+            "async": true,
+            "id": "main"
+        },
+        "dependencies": {
+            "minUI5Version": "1.104.2",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {},
+                "sap.f": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "br.com.dohler.zui5etqmaterial.zui5mmetqmaterial.i18n.i18n"
+                }
+            },
+            "": {
+                "preload": true,
+                "dataSource": "ZGW_MM_ETQ_MATERIAL_SRV"
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "br.com.dohler.zui5etqmaterial.zui5mmetqmaterial.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "Routemain",
+                    "pattern": "Routemain",
+                    "target": [
+                        "Targetmain"
+                    ]
+                }
+            ],
+            "targets": {
+                "Targetmain": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "main",
+                    "viewName": "main"
+                }
+            }
+        }
+    }
+}
