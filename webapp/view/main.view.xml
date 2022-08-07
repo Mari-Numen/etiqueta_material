@@ -18,7 +18,7 @@
 								<smartFilterBar:ControlConfiguration key="matkl" visibleInAdvancedArea="true"/>
 							</smartFilterBar:controlConfiguration>
 						</smartFilterBar:SmartFilterBar>
-						<smartTable:SmartTable id="tblMaterial" entitySet="ZCDS_MM_ETQ_MATERIAL" smartFilterId="smartFilterBar" tableType="ResponsiveTable" useExportToExcel="false" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="false" editTogglable="false" app:useSmartToggle="false">
+						<smartTable:SmartTable id="tblMaterial" entitySet="ZCDS_MM_ETQ_MATERIAL" smartFilterId="smartFilterBar" tableType="ResponsiveTable" useExportToExcel="false" useVariantManagement="true" useTablePersonalisation="true" header="{i18n>items}" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="false" editTogglable="false" app:useSmartToggle="false">
 							<smartTable:customToolbar>
 								<OverflowToolbar>
 									<ToolbarSpacer/>
